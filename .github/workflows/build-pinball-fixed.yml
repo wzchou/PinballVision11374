@@ -1,7 +1,7 @@
 name: Build PinballVision11374 APK - Fixed
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  
 
 jobs:
   build:
@@ -63,11 +63,11 @@ jobs:
 
           s = p.read_text()
 
-          s2, n = re.subn(
-              r'AnimatedVisibility\s*\(\s*visible\s*=\s*([^\n,)]+)\s*\)\s*\{',
-              r'if (\1) {',
-              s
-          )
+s2, n = re.subn(
+    r'AnimatedVisibility\s*\(\s*visible\s*=\s*flashText\s*!=\s*null,\s*modifier\s*=\s*Modifier\.align\(Alignment\.Center\)\s*\)\s*\{',
+    r'if (flashText != null) {',
+    s
+)
 
           print("Fixed", n, "AnimatedVisibility calls")
 
