@@ -177,8 +177,7 @@ jobs:
         shell: bash
         run: |
           cd "$GITHUB_WORKSPACE/project/PinballVisionMVP"
-          echo "android.useAndroidX=true" > 
-          gradle.properties
+          echo "android.useAndroidX=true" > gradle.properties
           gradle assembleDebug --stacktrace
 
       - name: Upload APK
