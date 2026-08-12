@@ -178,6 +178,7 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE/project/PinballVisionMVP"
           echo "android.useAndroidX=true" > gradle.properties
+          sed -i '/android {/a\    compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }' app/build.gradle.kts
           gradle assembleDebug --stacktrace
 
       - name: Upload APK
