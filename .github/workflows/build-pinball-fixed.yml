@@ -48,7 +48,7 @@ jobs:
           unzip -q /tmp/pinball.zip -d /tmp/project
 
           shopt -s dotglob
-          mv /tmp/project/PinballVisionMVP/* .
+          cp -r /tmp/project/PinballVisionMVP/app /tmp/project/PinballVisionMVP/build.gradle.kts /tmp/project/PinballVisionMVP/settings.gradle.kts /tmp/project/PinballVisionMVP/gradle.properties . 2>/dev/null || true
 
       - name: Fix AnimatedVisibility
         shell: bash
